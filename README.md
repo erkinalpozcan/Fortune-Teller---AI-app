@@ -1,6 +1,3 @@
-# Fortune-Teller---AI-app
-Fortune Teller - AI app
-
 # 🧿 AI Fortune Telling Application
 This project is a fun palm reading and coffee fortune telling application developed using the OpenAI GPT-4 Turbo (Vision) model. Thanks to this mobile interface designed with KivyMD, users can upload photos and get fortune telling comments instantly.
 
