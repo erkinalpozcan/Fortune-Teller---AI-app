@@ -34,5 +34,7 @@ pip install -r requirements.txt`
 
 ## Finaly 
 Run `python main.py`
+
+
 ![image](https://github.com/user-attachments/assets/83fcf3ba-c775-46b2-b64e-41333a7e4bcb)
 
