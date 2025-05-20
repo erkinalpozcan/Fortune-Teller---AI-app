@@ -1,0 +1,127 @@
+ScreenManager:
+    HomeScreen:
+    NavigationScreen:
+    ElFali1Screen:
+    ElFali2Screen:
+    KahveFali1Screen:
+    KahveFali2Screen:
+
+<HomeScreen>:
+    name: "home"
+    FloatLayout:
+        Image:
+            source: "wallpaper.jpg"
+            allow_stretch: True
+            keep_ratio: False
+        MDRaisedButton:
+            text: "Giriş"
+            pos_hint: {"center_x": .5, "center_y": .2}
+            size_hint: .6, .1
+            on_release: root.manager.current = "navigation"
+
+<NavigationScreen>:
+    name: "navigation"
+    FloatLayout:
+        Image:
+            source: "wallpaper.jpg"
+            allow_stretch: True
+            keep_ratio: False
+        MDLabel:
+            text: "Bakmak istediğiniz Fal Türünü seçin :)"
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            font_size: "24sp"
+            size_hint: 1, None
+            height: self.texture_size[1]
+            pos_hint: {"center_x": 0.5, "top": 0.92}
+        MDRaisedButton:
+            text: "El Falı"
+            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+            size_hint: 0.5, None
+            height: "48dp"
+            on_release: root.manager.current = "elfali1"
+        MDRaisedButton:
+            text: "Kahve Falı"
+            pos_hint: {"center_x": 0.5, "center_y": 0.2}
+            size_hint: 0.5, None
+            height: "48dp"
+            on_release: root.manager.current = "kahvefali1"
+
+<ElFali1Screen>:
+    name: "elfali1"
+    MDFloatLayout:
+        Image:
+            source: "wallpaper.jpg"
+            allow_stretch: True
+            keep_ratio: False
+        MDRaisedButton:
+            id: image_label
+            text: "Lütfen bir fotoğraf seçin"
+            size_hint: 0.8, None
+            height: "48dp"
+            pos_hint: {"center_x": 0.5, "center_y": 0.2}
+            on_release: root.open_file_chooser()
+        MDRaisedButton:
+            text: "Sonuçları Göster"
+            size_hint: 0.8, None
+            height: "48dp"
+            pos_hint: {"center_x": 0.5, "center_y": 0.1}
+            on_release: root.submit()
+
+<ElFali2Screen>:
+    name: "elfali2"
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 20
+        ScrollView:
+            MDLabel:
+                id: result_box
+                text: ""
+                halign: "center"
+                theme_text_color: "Primary"
+                size_hint_y: None
+                height: self.texture_size[1]
+        MDRaisedButton:
+            text: "Ana Menüye Dön"
+            on_release: root.manager.current = "navigation"
+
+<KahveFali1Screen>:
+    name: "kahvefali1"
+    MDFloatLayout:
+        Image:
+            source: "wallpaper.jpg"
+            allow_stretch: True
+            keep_ratio: False
+        MDRaisedButton:
+            id: image_label
+            text: "Lütfen bir kahve fotoğrafı seçin"
+            size_hint: 0.8, None
+            height: "48dp"
+            pos_hint: {"center_x": 0.5, "center_y": 0.2}
+            on_release: root.open_file_chooser()
+        MDRaisedButton:
+            text: "Falına Bak"
+            size_hint: 0.8, None
+            height: "48dp"
+            pos_hint: {"center_x": 0.5, "center_y": 0.1}
+            on_release: root.submit()
+
+<KahveFali2Screen>:
+    name: "kahvefali2"
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 20
+        ScrollView:
+            MDLabel:
+                id: result_box
+                text: ""
+                halign: "center"
+                theme_text_color: "Primary"
+                size_hint_y: None
+                height: self.texture_size[1]
+        MDRaisedButton:
+            text: "Ana Menüye Dön"
+            on_release: root.manager.current = "navigation"
